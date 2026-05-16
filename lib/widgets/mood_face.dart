@@ -94,9 +94,9 @@ class MoodFacePainter extends CustomPainter {
         _drawSadMouth(canvas, center, size, mouthPaint);
         break;
       case Mood.annoyed:
-        _drawFocusedEyes(canvas, leftEye, rightEye, eyeRadius, eyePaint);
-        _drawFocusedBrows(canvas, focusedLeftBrow, focusedRightBrow, faceRadius, browPaint);
-        _drawFocusedMouth(canvas, center, size, mouthPaint);
+        _drawAnnoyedEyes(canvas, leftEye, rightEye, eyeRadius, eyePaint);
+        _drawAnnoyedBrows(canvas, focusedLeftBrow, focusedRightBrow, faceRadius, browPaint);
+        _drawAnnoyedMouth(canvas, center, size, mouthPaint);
         break;
       case Mood.angry:
         _drawAngryEyes(canvas, leftEye, rightEye, eyeRadius, eyePaint);
@@ -107,7 +107,7 @@ class MoodFacePainter extends CustomPainter {
     }
   }
   // Focused: Slanted brows, eyes and slightly upwards curved mouth
-  void _drawFocusedEyes(Canvas canvas, Offset leftEye, Offset rightEye, double radius, Paint paint) {
+  void _drawAnnoyedEyes(Canvas canvas, Offset leftEye, Offset rightEye, double radius, Paint paint) {
     canvas.drawCircle(leftEye, radius * 0.5, paint..style = PaintingStyle.fill);
     canvas.drawCircle(rightEye, radius * 0.5, paint..style = PaintingStyle.fill);
     paint.style = PaintingStyle.stroke;
@@ -118,7 +118,7 @@ class MoodFacePainter extends CustomPainter {
     paint.style = PaintingStyle.stroke;
   }
 
-  void _drawFocusedBrows(Canvas canvas, Offset leftBrow, Offset rightBrow, double radius, Paint paint){
+  void _drawAnnoyedBrows(Canvas canvas, Offset leftBrow, Offset rightBrow, double radius, Paint paint){
       final leftPath = Path();
       leftPath.moveTo(leftBrow.dx, leftBrow.dy);
       leftPath.lineTo(leftBrow.dx + 10, leftBrow.dy);
@@ -129,7 +129,7 @@ class MoodFacePainter extends CustomPainter {
       rightPath.lineTo(rightBrow.dx + 10, rightBrow.dy);
       canvas.drawPath(rightPath, paint);
   }
-  void _drawFocusedMouth(Canvas canvas, Offset center, Size size, Paint paint) {
+  void _drawAnnoyedMouth(Canvas canvas, Offset center, Size size, Paint paint) {
       final mouthRect = Rect.fromCenter(
       center: center.translate(0, size.height * 0.15),
       width: size.width * 0.35,
@@ -240,7 +240,7 @@ class MoodFacePainter extends CustomPainter {
     final mouthRect = Rect.fromCenter(
       center: center.translate(0, size.height * 0.15),
       width: size.width * 0.35,
-      height: size.height * 0.15,  // Reduced height for shallower curve
+      height: size.height * 0.2,  // Reduced height for shallower curve
     );
     canvas.drawArc(mouthRect, -pi * 0.1, -pi * 0.8, false, paint);
   }
