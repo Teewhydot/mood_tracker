@@ -22,15 +22,15 @@ extension MoodProperties on Mood {
   Color get color {
     switch (this) {
       case Mood.happy:
-        return const Color(0xFF4CAF50);
+        return const Color(0xFFFFB300);  // Warm amber/gold - joyful, energetic
       case Mood.calm:
-        return const Color(0xFF2196F3);
+        return const Color(0xFF42A5F5);  // Soft blue - peaceful, serene
       case Mood.sad:
-        return const Color(0xFF9E9E9E);
+        return const Color(0xFF78909C);  // Blue-grey - melancholic, subdued
       case Mood.annoyed:
-        return const Color.fromARGB(255, 255, 152, 0);  // Orange color, fully opaque
+        return const Color(0xFFFF7043);  // Coral orange - irritated, frustrated
       case Mood.angry:
-        return const Color.fromARGB(255, 232, 3, 3);  // Purple
+        return const Color(0xFFE53935);  // Bold red - intense, angry
     }
   }
 }

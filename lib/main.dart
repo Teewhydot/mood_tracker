@@ -204,31 +204,29 @@ class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
       children: Mood.values.map((mood) {
         return GestureDetector(
           onTap:  () => _logMood(mood),
-          child: Container(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                MoodFace(mood: mood, size: 44),
-                const SizedBox(height: 6),
-                Container(
-                  padding: EdgeInsets.all(5),
-                  decoration:
-                   BoxDecoration(
-                  color: mood.color,
-                  borderRadius: BorderRadius.all(Radius.circular(10))
-
-                  ),
-                  child: Text(
-                    mood.label,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                    ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              MoodFace(mood: mood, size: 44),
+              const SizedBox(height: 6),
+              Container(
+                padding: EdgeInsets.all(5),
+                decoration:
+                 BoxDecoration(
+                color: mood.color,
+                borderRadius: BorderRadius.all(Radius.circular(10))
+          
+                ),
+                child: Text(
+                  mood.label,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         );
       }).toList(),

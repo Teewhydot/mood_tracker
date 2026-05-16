@@ -1,4 +1,4 @@
-enum Mood { happy, calm, neutral, tired, stressed, angry }
+enum Mood { happy, calm, sad, annoyed, angry }
 
 
 
