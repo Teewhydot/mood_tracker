@@ -131,7 +131,7 @@ class MoodFacePainter extends CustomPainter {
   }
   void _drawAnnoyedMouth(Canvas canvas, Offset center, Size size, Paint paint) {
       final mouthRect = Rect.fromCenter(
-      center: center.translate(0, size.height * 0.15),
+      center: center.translate(0, size.height * 0.20),
       width: size.width * 0.35,
       height: size.height * 0.25,
     );
@@ -238,7 +238,7 @@ class MoodFacePainter extends CustomPainter {
   void _drawAngryMouth(Canvas canvas, Offset center, Size size, Paint paint) {
     // Shallower arc than annoyed
     final mouthRect = Rect.fromCenter(
-      center: center.translate(0, size.height * 0.15),
+      center: center.translate(0, size.height * 0.20),
       width: size.width * 0.35,
       height: size.height * 0.2,  // Reduced height for shallower curve
     );
