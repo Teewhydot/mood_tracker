@@ -9,33 +9,15 @@ extension MoodProperties on Mood {
         return 'Happy';
       case Mood.calm:
         return 'Calm';
-      case Mood.neutral:
-        return 'Neutral';
-      case Mood.tired:
-        return 'Tired';
-      case Mood.stressed:
-        return 'Stressed';
+      case Mood.sad:
+        return 'Sad';
+      case Mood.annoyed:
+        return "Annoyed";
       case Mood.angry:
-        return 'Angry';
+        return "Angry";
     }
   }
 
-  String get emoji {
-    switch (this) {
-      case Mood.happy:
-        return '😄';
-      case Mood.calm:
-        return '😌';
-      case Mood.neutral:
-        return '😐';
-      case Mood.tired:
-        return '😴';
-      case Mood.stressed:
-        return '😣';
-      case Mood.angry:
-        return '😠';
-    }
-  }
 
   Color get color {
     switch (this) {
@@ -43,14 +25,12 @@ extension MoodProperties on Mood {
         return const Color(0xFF4CAF50);
       case Mood.calm:
         return const Color(0xFF2196F3);
-      case Mood.neutral:
+      case Mood.sad:
         return const Color(0xFF9E9E9E);
-      case Mood.tired:
-        return const Color(0xFFFFA726);
-      case Mood.stressed:
-        return const Color(0xFFEF5350);
+      case Mood.annoyed:
+        return const Color.fromARGB(255, 255, 152, 0);  // Orange color, fully opaque
       case Mood.angry:
-        return const Color(0xFFF44336);
+        return const Color.fromARGB(255, 232, 3, 3);  // Purple
     }
   }
 }
